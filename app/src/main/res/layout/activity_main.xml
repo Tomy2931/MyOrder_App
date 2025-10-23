@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E1"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btnOptions"
+        android:layout_width="62dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:text="⚙" />
+
+    <ImageButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+
+        android:layout_margin="20dp"
+        android:src="@drawable/defaulticon"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:radius="20dp"
+        android:backgroundTint="#008000FF"
+        />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="520dp"
+        android:layout_centerInParent="true"
+        android:background="#FFF3E0"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="My Order"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Menú" />
+        <Button
+            android:id="@+id/btnPedidos"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Pedidos" />
+        <Button
+            android:id="@+id/btnHistorial"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Historial" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Salir" />
+    </LinearLayout>
+
+</RelativeLayout>
