@@ -31,9 +31,8 @@
             android:id="@+id/pedidosLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             android:background="#5DFFD0AE"
-            >
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"

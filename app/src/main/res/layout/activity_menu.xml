@@ -1,186 +1,31 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DE8A8A"
-    tools:context=".MenuActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#C8C8C8">
 
-    <!-- 🔹 Título superior -->
+    <!-- Título -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menú"
-        android:textSize="36sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginBottom="12dp" />
 
-    <!-- 🔹 Fila de categorías -->
-    <LinearLayout
-        android:id="@+id/seccionCategorias"
+    <!-- Contenedor scrollable -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnEntrada"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/containerComidas"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Entrada"
-            android:backgroundTint="#FFC107"
-            android:textColor="#000000"
-            android:paddingHorizontal="16dp"/>
+            android:orientation="vertical" />
+    </ScrollView>
 
-        <Button
-            android:id="@+id/btnBebida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Bebida"
-            android:backgroundTint="#03A9F4"
-            android:textColor="#FFFFFF"
-            android:paddingHorizontal="16dp"/>
-
-        <Button
-            android:id="@+id/btnGuarnicion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Guarnición"
-            android:backgroundTint="#8BC34A"
-            android:textColor="#FFFFFF"
-            android:paddingHorizontal="16dp"/>
-
-    </LinearLayout>
-
-    <!-- 🔹 Cuadrícula de comidas -->
-    <GridLayout
-        android:id="@+id/gridComidas"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:columnCount="2"
-        android:useDefaultMargins="true"
-        app:layout_constraintTop_toBottomOf="@id/seccionCategorias"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp">
-
-        <!-- 🥗 Ejemplo de ítem de comida -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:src="@drawable/ensaladaimagen"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                android:contentDescription="Ensalada" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ensalada"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-
-        <!-- 🍔 Otro ítem -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="135dp"
-                android:layout_height="140dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/rounded_button"
-                android:contentDescription="Hamburguesa"
-                android:scaleType="centerCrop"
-                android:src="@drawable/hamburguesaimagen" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hamburguesa"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-
-        <!-- 🍕 Tercer ítem -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:src="@drawable/pizza"
-                android:background="@drawable/rounded_button"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                android:contentDescription="Pizza" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pizza"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-
-        <!-- 🍰 Cuarto ítem -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:src="@drawable/postre"
-                android:background="@drawable/rounded_button"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                android:contentDescription="Postre" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Postre"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-    </GridLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
