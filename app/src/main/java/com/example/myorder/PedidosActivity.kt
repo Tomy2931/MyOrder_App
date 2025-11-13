@@ -1,20 +1,34 @@
 package com.example.myorder
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class PedidosActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_pedidos)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val pedidosLayout = findViewById<LinearLayout>(R.id.pedidosLayout)
+
+        val nombres = intent.getStringArrayListExtra("nombres") ?: arrayListOf()
+        val precios = intent.getIntegerArrayListExtra("precios") ?: arrayListOf()
+
+        for (i in nombres.indices) {
+            val tvPedido = TextView(this)
+            tvPedido.text = "${nombres[i]} - $${precios[i]}"
+            tvPedido.textSize = 18f
+            tvPedido.setPadding(20, 10, 20, 10)
+            pedidosLayout.addView(tvPedido)
         }
+
+        val total = precios.sum()
+        val tvTotal = TextView(this)
+        tvTotal.text = "\nTotal: $$total"
+        tvTotal.textSize = 20f
+        tvTotal.setPadding(20, 40, 20, 20)
+        pedidosLayout.addView(tvTotal)
     }
 }
